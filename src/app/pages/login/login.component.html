@@ -1,0 +1,82 @@
+<section class="container-fondo py-3 py-md-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+        <div class="card border border-primary shadow-lg rounded-4">
+          <div class="card-body p-4 p-md-5">
+
+            <!-- Logo -->
+            <div class="text-center mb-4">
+              <img src="../../../assets/images/logonegro.png"
+                   alt="Logo"
+                   class="img-fluid"
+                   style="max-width: 150px;">
+            </div>
+
+            <h3 class="mb-3 text-center">Iniciar Sesión</h3>
+
+            <!-- Mensaje de error con ng-bootstrap -->
+            <ngb-alert *ngIf="loginError"
+                       type="danger"
+                       [dismissible]="true"
+                       (closed)="loginError = ''">
+              {{ loginError }}
+            </ngb-alert>
+
+            <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+              <!-- Campo Cédula -->
+              <div class="mb-3">
+                <label for="cedula" class="form-label">Cédula</label>
+                <input type="text"
+                       class="form-control"
+                       id="cedula"
+                       name="cedula"
+                       [(ngModel)]="cedula"
+                       required
+                       ngbTooltip="Ingrese su número de cédula" />
+              </div>
+
+              <!-- Campo Contraseña -->
+              <div class="mb-3">
+                <label for="contrasena" class="form-label">Contraseña</label>
+                <div class="input-group">
+                  <input [type]="showPassword ? 'text' : 'password'"
+                         class="form-control"
+                         id="contrasena"
+                         name="contrasena"
+                         [(ngModel)]="contrasena"
+                         required
+                         ngbTooltip="Ingrese su contraseña" />
+                  <button type="button"
+                          class="btn btn-outline-secondary"
+                          (click)="togglePasswordVisibility()">
+                    <span *ngIf="!showPassword">👁️</span>
+                    <span *ngIf="showPassword"></span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Botón login -->
+              <div class="d-grid gap-2">
+                <button type="submit"
+                        class="btn btn-primary"
+                        [disabled]="!loginForm.form.valid">
+                  Iniciar Sesión
+                </button>
+              </div>
+            </form>
+
+            <!-- Enlace a registro -->
+            <div class="mt-3 text-center">
+              ¿No tienes cuenta?
+              <a [routerLink]="['/registro']" class="text-decoration-none">
+                Registrarse gratis
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

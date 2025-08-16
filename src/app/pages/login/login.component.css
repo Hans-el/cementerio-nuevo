@@ -1,0 +1,67 @@
+.container-fondo {
+  background: url('/assets/images/"".jpg') no-repeat center center fixed; /* poner la foto que quiero*/
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 35px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #555758;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.toggle-password:focus {
+  outline: none;
+}
+
+.toggle-password i {
+  font-size: 16px;
+}
+
+.rounded-custom {
+  border-radius: 45px;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 80%;
+}
+
+.logo {
+  max-width: 150px;
+  height: auto;
+}
+
+.mb-3 {
+  margin-bottom: 1rem;
+}
+
+.form-control {
+  border-radius: 15px;
+}
+
+.btn {
+  border-radius: 15px;
+  background-color: #083a63;
+  padding: 10px 20px;
+  border: none;
+  color: white;
+}
