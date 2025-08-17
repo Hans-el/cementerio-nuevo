@@ -41,7 +41,7 @@ export class LoginComponent {
     this.apiService.login(this.cedula, this.contrasena).subscribe(
       (response: any) => {
         localStorage.setItem('token', response.token);
-
+        //usando SweetAlert2 
         Swal.fire({
           title: 'Inicio de sesión exitoso!',
           text: 'Has iniciado sesión correctamente.',
@@ -54,7 +54,6 @@ export class LoginComponent {
         });
       },
       (error) => {
-        // Opción 1: seguir usando SweetAlert2
         Swal.fire({
           title: 'Error!',
           text: 'Cédula o contraseña incorrectos.',
